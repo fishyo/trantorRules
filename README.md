@@ -1,4 +1,5 @@
-# Trantor Rules
+# trantorRules 
+## 取自阿西莫夫银河帝国系列小说中的重要地名
 
 自用工具规则补充
 
