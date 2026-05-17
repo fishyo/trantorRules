@@ -6,47 +6,64 @@
 
 ### 🔵 Quantumult X
 
-**规则集 (Filter):**
+**分流规则 (Filter):**
 
-| 规则 | 策略 | 说明 | 一键添加 |
-|------|------|------|---------|
-| ai | `proxy` | AI 规则 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Fai.snippet%2C%20tag%3Dai%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) |
-| blockHttpdns | `reject` | 拦截 HTTPDNS | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2FblockHttpdns.snippet%2C%20tag%3DblockHttpdns%2C%20force-policy%3Dreject%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) |
-| proxyGfwlist | `proxy` | 代理列表 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2FproxyGfwlist.snippet%2C%20tag%3DproxyGfwlist%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) |
-| supercell | `proxy` | Supercell 游戏 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Fsupercell.snippet%2C%20tag%3Dsupercell%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) |
-| telegram | `proxy` | Telegram | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Ftelegram.snippet%2C%20tag%3Dtelegram%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) |
-| youtube | `proxy` | YouTube | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Fyoutube.snippet%2C%20tag%3Dyoutube%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) |
+| 规则 | 策略 | 说明 | 一键添加 | 复制链接 |
+|------|------|------|---------|---------|
+| ai | `proxy` | AI 规则 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Fai.snippet%2C%20tag%3Dai%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rules/ai.snippet) |
+| blockHttpdns | `reject` | 拦截 HTTPDNS | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2FblockHttpdns.snippet%2C%20tag%3DblockHttpdns%2C%20force-policy%3Dreject%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rules/blockHttpdns.snippet) |
+| proxyGfwlist | `proxy` | 代理列表 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2FproxyGfwlist.snippet%2C%20tag%3DproxyGfwlist%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rules/proxyGfwlist.snippet) |
+| supercell | `proxy` | Supercell 游戏 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Fsupercell.snippet%2C%20tag%3Dsupercell%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rules/supercell.snippet) |
+| telegram | `proxy` | Telegram | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Ftelegram.snippet%2C%20tag%3Dtelegram%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rules/telegram.snippet) |
+| youtube | `proxy` | YouTube | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22filter_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frules%2Fyoutube.snippet%2C%20tag%3Dyoutube%2C%20force-policy%3Dproxy%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rules/youtube.snippet) |
 
-**重写 (Rewrite):**
+**重写规则 (Rewrite):**
 
-- [Google 重写](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frewrite%2FgoogleRewrite.snippet%2C%20tag%3DGoogleRewrite%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D)
-- [九号出行 (Ninebot) 签到与 Cookie](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frewrite%2Fninebot.snippet%2C%20tag%3DNinebot%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D)
+| 名称 | 说明 | 一键添加 | 复制链接 |
+|------|------|---------|---------|
+| GoogleRewrite | Google 重定向 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frewrite%2FgoogleRewrite.snippet%2C%20tag%3DGoogleRewrite%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rewrite/googleRewrite.snippet) |
+| Ninebot | 九号出行 Cookie 获取 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frewrite%2Fninebot.snippet%2C%20tag%3DNinebot%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rewrite/ninebot.snippet) |
+| tonghuashun | 同花顺去广告 | [Add](https://quantumult.app/x/open-app/add-resource?remote-resource=%7B%22rewrite_remote%22%3A%5B%22https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2FquanX%2Frewrite%2Ftonghuashun.snippet%2C%20tag%3Dtonghuashun%2C%20update-interval%3D86400%2C%20opt-parser%3Dfalse%2C%20enabled%3Dtrue%22%5D%7D) | [Copy](https://raw.githubusercontent.com/fishyo/trantorRules/main/quanX/rewrite/tonghuashun.snippet) |
 
 ### 🟢 Loon
 
 **插件 (Plugin):**
-- [广告拦截 (Ad Block)](https://www.nsloon.com/openloon/import?plugin=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/plugin/adBlock.lpx)
+
+| 名称 | 说明 | 一键导入 | 复制链接 |
+|------|------|---------|---------|
+| adBlock | 广告拦截 | [导入](https://www.nsloon.com/openloon/import?plugin=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/plugin/adBlock.lpx) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/plugin/adBlock.lpx) |
 
 **规则 (Rule):**
-- [代理规则 (Proxy)](https://www.nsloon.com/openloon/import?rules=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/rules/proxy.lsr)
-- [Supercell](https://www.nsloon.com/openloon/import?rules=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/rules/supercell.lsr)
+
+| 名称 | 说明 | 一键导入 | 复制链接 |
+|------|------|---------|---------|
+| proxy | 代理规则 | [导入](https://www.nsloon.com/openloon/import?rules=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/rules/proxy.lsr) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/rules/proxy.lsr) |
+| supercell | Supercell 直连 | [导入](https://www.nsloon.com/openloon/import?rules=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/rules/supercell.lsr) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/rules/supercell.lsr) |
 
 ### 🟡 Egern
 
-**规则集与小组件 (Modules):**
-- [广告拦截 (Ad Block)](egern://modules/new?name=AdBlock&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2FadBlock.yaml)
-- [VPS 流量监控 (VPS Widget)](egern://modules/new?name=VPSWidget&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2Fwidget%2FvpsWidget.yaml)
+*(注：部分平台不支持识别 `egern://` 协议跳转，如点击无效请直接复制链接导入)*
+
+**模块与小组件 (Module):**
+
+| 名称 | 说明 | 一键导入 | 复制链接 |
+|------|------|---------|---------|
+| AdBlock | 自用广告拦截 | [导入](egern://modules/new?name=AdBlock&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2FadBlock.yaml) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/egern/adBlock.yaml) |
+| VPSWidget | VPS 流量监控组件 | [导入](egern://modules/new?name=VPSWidget&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2Fwidget%2FvpsWidget.yaml) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/egern/widget/vpsWidget.yaml) |
 
 ### 🐱 Mihomo / Clash
 
 **规则提供者 (Rule Providers):**
-- [代理规则 (Proxy)](https://raw.githubusercontent.com/fishyo/trantorRules/main/mihomo/proxy.yaml)
-- [Supercell](https://raw.githubusercontent.com/fishyo/trantorRules/main/mihomo/supercell.yaml)
+
+| 名称 | 说明 | 复制链接 |
+|------|------|---------|
+| proxy | 代理规则 | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/mihomo/proxy.yaml) |
+| supercell | Supercell 直连 | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/mihomo/supercell.yaml) |
 
 ### 🧰 BoxJS 订阅
 
-点击下方链接一键订阅本项目的 BoxJS：
-- [一键添加 BoxJS 订阅](http://boxjs.com/#/sub/add/https://raw.githubusercontent.com/fishyo/trantorRules/main/script/boxjs.json)
+**一键订阅本项目的 BoxJS：**
+[点击添加 BoxJS](http://boxjs.com/#/sub/add/https://raw.githubusercontent.com/fishyo/trantorRules/main/script/boxjs.json) | [复制订阅链接](https://raw.githubusercontent.com/fishyo/trantorRules/main/script/boxjs.json)
 
 ---
 
