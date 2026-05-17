@@ -48,8 +48,8 @@
 
 | 名称 | 说明 | 一键导入 | 复制链接 |
 |------|------|---------|---------|
-| AdBlock | 自用广告拦截 | [导入](egern://modules/new?name=AdBlock&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2FadBlock.yaml) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/egern/adBlock.yaml) |
-| VPSWidget | VPS 流量监控组件 | [导入](egern://modules/new?name=VPSWidget&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2Fwidget%2FvpsWidget.yaml) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/egern/widget/vpsWidget.yaml) |
+| AdBlock | 自用广告拦截 | [导入](egern:/modules/new?name=AdBlock&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2FadBlock.yaml) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/egern/adBlock.yaml) |
+| VPSWidget | VPS 流量监控组件 | [导入](egern:/modules/new?name=VPSWidget&url=https%3A%2F%2Fraw.githubusercontent.com%2Ffishyo%2FtrantorRules%2Fmain%2Fegern%2Fwidget%2FvpsWidget.yaml) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/egern/widget/vpsWidget.yaml) |
 
 ### 🐱 Mihomo / Clash
 
