@@ -60,6 +60,16 @@
 | proxy | 代理规则 | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/mihomo/proxy.yaml) |
 | supercell | Supercell 直连 | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/mihomo/supercell.yaml) |
 
+
+### 📜 脚本 (Scripts)
+
+| 脚本名称 | 说明 | 复制链接 |
+|---------|------|---------|
+| bwg.js | Bandwagon VPS 状态查询 (支持 BoxJS) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/script/bandwagon/bwg.js) |
+| racknerd.js | RackNerd VPS 状态查询 (支持 BoxJS) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/script/racknerd/racknerd.js) |
+| ninebotCookie.js | 九号出行 Cookie 获取 | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/script/ninebot/ninebotCookie.js) |
+| ninebotSign.js | 九号出行自动签到 | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/script/ninebot/ninebotSign.js) |
+
 ### 🧰 BoxJS 订阅
 
 **一键订阅本项目的 BoxJS：**
