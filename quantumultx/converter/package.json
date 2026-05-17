@@ -1,0 +1,5 @@
+{
+  "name": "qx-rule-converter",
+  "version": "2.0.0",
+  "description": "ACL4SSR → Quantumult X 规则转换器（纯 CLI）"
+}

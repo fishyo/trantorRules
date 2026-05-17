@@ -1,0 +1,159 @@
+{
+  "outputDir": "../rules",
+  "sources": [
+    {
+      "name": "banEasyList",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list",
+      "policy": "reject",
+      "category": "广告拦截",
+      "enabled": false
+    },
+    {
+      "name": "banProgramAd",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list",
+      "policy": "reject",
+      "category": "广告拦截",
+      "enabled": false
+    },
+    {
+      "name": "proxyGfwlist",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list",
+      "policy": "proxy",
+      "category": "代理",
+      "enabled": true
+    },
+    {
+      "name": "proxyLite",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list",
+      "policy": "proxy",
+      "category": "代理",
+      "enabled": false
+    },
+    {
+      "name": "chinaDomain",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list",
+      "policy": "direct",
+      "category": "直连",
+      "enabled": false
+    },
+    {
+      "name": "chinaDomainNoIp",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomainNoIP.list",
+      "policy": "direct",
+      "category": "直连",
+      "enabled": false
+    },
+    {
+      "name": "chinaMedia",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list",
+      "policy": "direct",
+      "category": "直连",
+      "enabled": false
+    },
+    {
+      "name": "google",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "youtube",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": true
+    },
+    {
+      "name": "telegram",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Telegram.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": true
+    },
+    {
+      "name": "netflix",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "spotify",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Spotify.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "twitter",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Twitter.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "github",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GitHub.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "apple",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Apple.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "microsoft",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Microsoft.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "steam",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list",
+      "policy": "proxy",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "bilibili",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list",
+      "policy": "direct",
+      "category": "常用服务",
+      "enabled": false
+    },
+    {
+      "name": "ai",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/AI.yaml",
+      "policy": "proxy",
+      "category": "工具",
+      "enabled": true
+    },
+    {
+      "name": "supercell",
+      "url": "https://raw.githubusercontent.com/fishyo/someLoonThings/refs/heads/main/loon/supercell.lsr",
+      "policy": "proxy",
+      "category": "常用工具",
+      "enabled": true
+    },
+    {
+      "name": "blockHttpdns",
+      "url": "https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/HTTPDNS.Block.list",
+      "policy": "reject",
+      "category": "安全防护",
+      "enabled": true
+    },
+    {
+      "name": "custom",
+      "url": "https://raw.githubusercontent.com/fishyo/someLoonThings/refs/heads/main/loon/proxy.lsr",
+      "policy": "proxy",
+      "category": "常用工具",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+
+#for myself
+DOMAIN-SUFFIX,bitwarden
+DOMAIN-SUFFIX,pythonhosted.org
+# hysteria
+DOMAIN-KEYWORD,hysteria
+
+# pocketcasts
+DOMAIN-SUFFIX,pocketcasts.com
+DOMAIN-SUFFIX,pca.st
+
+# nxtrace
+DOMAIN-SUFFIX,nxtrace.org
+
+# fireside podcast
+DOMAIN-KEYWORD,fireside

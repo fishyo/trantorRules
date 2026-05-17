@@ -1,0 +1,14 @@
+# Google.cn 重定向到 Google.com
+# Redirect Google.cn to Google.com
+# 
+# 使用方法 / Usage:
+# 在 Quantumult X 配置文件的 [rewrite_remote] 部分添加:
+# https://raw.githubusercontent.com/your-username/your-repo/main/google-redirect.snippet, tag=Google重定向, enabled=true
+#
+# 或者使用本地文件路径
+
+# 重定向规则 / Redirect Rules
+^https?:\/\/(www\.)?google\.cn url 302 https://www.google.com
+
+# MITM 主机名 / MITM Hostname
+hostname = *.google.cn

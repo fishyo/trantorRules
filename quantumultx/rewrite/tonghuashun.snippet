@@ -1,0 +1,11 @@
+# name: 同花顺去推荐广告
+# desc: 转换自 androidcn/userscripts
+# icon: https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1009.png
+
+# 同花顺去推荐内容广告 (脚本处理)
+^https:\/\/recommend\.10jqka\.com\.cn\/app\/discover\/api\/v1\/recommend url script-response-body https://raw.githubusercontent.com/androidcn/userscripts/main/tonghuashun.js
+
+# 同花顺拦截推荐广告 (拦截)
+^https?:\/\/adm\.10jqka\.com\.cn\/interface\/ad\/recommend url reject-200
+
+hostname = recommend.10jqka.com.cn, adm.10jqka.com.cn
