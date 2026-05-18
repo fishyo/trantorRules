@@ -41,7 +41,10 @@ const $ = {
     }
   },
   done: (obj) => {
-    if (typeof $done !== "undefined") $done(obj);
+    if (typeof $done !== "undefined") {
+      if (typeof obj !== "undefined") $done(obj);
+      else $done();
+    }
   }
 };
 
