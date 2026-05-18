@@ -126,12 +126,12 @@ function getServiceInfo() {
   // 验证配置
   if (!config.apiKey || !config.apiHash) {
     console.log("❌ Configuration missing");
-    $notification.post(
+    $.notify(
       "⚠️ 配置缺失",
       "",
       "请在 BoxJS 中配置 RackNerd API Key 和 Hash"
     );
-    $done();
+    $.done();
     return;
   }
 
@@ -149,11 +149,11 @@ function getServiceInfo() {
   const maskedUrl = apiUrl.replace(/key=([^&]+)/, "key=****").replace(/hash=([^&]+)/, "hash=****");
   console.log(`Request API: ${maskedUrl}`);
 
-  $httpClient.get(request, function (error, response, data) {
+  $.get(request, function (error, response, data) {
     if (error) {
       console.error("❌ Request Error:", error);
-      $notification.post("❌ 查询失败", "", error.message);
-      $done();
+      $.notify("❌ 查询失败", "", error.message);
+      $.done();
       return;
     }
 
@@ -166,8 +166,8 @@ function getServiceInfo() {
 
       if (xmlData.status === "error") {
         console.warn("⚠️ API Returned Error:", xmlData.statusmsg);
-        $notification.post("❌ API Error", "", xmlData.statusmsg);
-        $done();
+        $.notify("❌ API Error", "", xmlData.statusmsg);
+        $.done();
         return;
       }
 
@@ -228,15 +228,15 @@ function getServiceInfo() {
           }
           
           console.log("🔔 Sending Notification...");
-          $notification.post("🖥️ RackNerd Status", "", msg);
-          $done();
+          $.notify("🖥️ RackNerd Status", "", msg);
+          $.done();
       };
 
       // IP 位置查询
       if (ipAddress) {
           const ipApiUrl = `http://ip-api.com/json/${ipAddress}?lang=en`;
           console.log(`Querying IP Location for: ${ipAddress}`);
-          $httpClient.get({ url: ipApiUrl }, (err, resp, body) => {
+          $.get({ url: ipApiUrl }, (err, resp, body) => {
               let location = null;
               if (!err && body) {
                   try {
@@ -261,8 +261,8 @@ function getServiceInfo() {
 
     } catch (e) {
       console.error("❌ Parse Error:", e);
-      $notification.post("❌ 解析错误", "", e.message);
-      $done();
+      $.notify("❌ 解析错误", "", e.message);
+      $.done();
     }
   });
 }
@@ -270,7 +270,7 @@ function getServiceInfo() {
 function main() {
   if (typeof $environment !== "undefined" && $environment.platform === "boxjs") {
     const config = getConfig();
-    $done({
+    $.done({
         title: boxjsConfig.title,
         icon: boxjsConfig.icon,
         items: boxjsConfig.settings.map((item) => ({

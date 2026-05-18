@@ -15,36 +15,46 @@ scriptings:
 
 // 包装在一个立即执行函数中
 ;(function() {
-// Quantumult X Compatibility Shim
-if (typeof $task !== 'undefined') {
-  var $persistentStore = {
-    read: key => $prefs.valueForKey(key),
-    write: (val, key) => $prefs.setValueForKey(val, key)
-  };
-  var $notification = {
-    post: (title, sub, body) => $notify(title, sub, body)
-  };
-  var $httpClient = {
-    get: (opts, cb) => {
-      var method = 'GET';
-      if (typeof opts === 'string') opts = { url: opts };
-      opts.method = method;
-      $task.fetch(opts).then(resp => {
-        resp.status = resp.statusCode;
-        cb(null, resp, resp.body);
-      }, err => cb(err, null, null));
-    },
-    post: (opts, cb) => {
-      var method = 'POST';
-      if (typeof opts === 'string') opts = { url: opts };
-      opts.method = method;
-      $task.fetch(opts).then(resp => {
-        resp.status = resp.statusCode;
-        cb(null, resp, resp.body);
-      }, err => cb(err, null, null));
+const $ = {
+  read: (key) => {
+    if (typeof $persistentStore !== "undefined") return $persistentStore.read(key);
+    if (typeof $prefs !== "undefined") return $prefs.valueForKey(key);
+  },
+  write: (val, key) => {
+    if (typeof $persistentStore !== "undefined") return $persistentStore.write(val, key);
+    if (typeof $prefs !== "undefined") return $prefs.setValueForKey(val, key);
+  },
+  notify: (title, sub, msg) => {
+    if (typeof $notification !== "undefined") $notification.post(title, sub, msg);
+    else if (typeof $notify !== "undefined") $notify(title, sub, msg);
+    else console.log(`${title}\n${sub}\n${msg}`);
+  },
+  get: (opts, cb) => {
+    if (typeof $httpClient !== "undefined") $httpClient.get(opts, cb);
+    else if (typeof $task !== "undefined") {
+      if (typeof opts === "string") opts = { url: opts };
+      opts.method = "GET";
+      $task.fetch(opts).then(
+        (resp) => cb(null, { ...resp, status: resp.statusCode }, resp.body),
+        (err) => cb(err, null, null)
+      );
     }
-  };
-}
+  },
+  post: (opts, cb) => {
+    if (typeof $httpClient !== "undefined") $httpClient.post(opts, cb);
+    else if (typeof $task !== "undefined") {
+      if (typeof opts === "string") opts = { url: opts };
+      opts.method = "POST";
+      $task.fetch(opts).then(
+        (resp) => cb(null, { ...resp, status: resp.statusCode }, resp.body),
+        (err) => cb(err, null, null)
+      );
+    }
+  },
+  done: (obj) => {
+    if (typeof $done !== "undefined") $done(obj);
+  }
+};
 
 const APP = {
   name: "九号出行",
@@ -92,7 +102,7 @@ function querySignStatus(callback) {
     timeout: CONFIG.timeout,
   };
 
-  $httpClient.get(options, (error, response, data) => {
+  $.get(options, (error, response, data) => {
     if (error || response.status !== 200) {
       console.log("查询签到状态失败");
       callback(null);
@@ -135,15 +145,15 @@ function addExtraInfo(parts, data) {
 }
 
 // 读取Cookie
-const cookieDataStr = $persistentStore.read(APP.cookieKey);
+const cookieDataStr = $.read(APP.cookieKey);
 if (!cookieDataStr) {
   console.log("未找到保存的Cookie数据");
-  $notification.post(
+  $.notify(
     APP.name,
     "❌ 签到失败",
     "未找到Cookie数据\n请先打开APP进入签到页面"
   );
-  $done();
+  $.done();
   return;
 }
 
@@ -152,15 +162,15 @@ try {
   console.log("✓ Cookie数据读取成功");
 } catch (e) {
   console.log("解析Cookie失败: " + e);
-  $notification.post(APP.name, "❌ 签到失败", "Cookie数据解析失败");
-  $done();
+  $.notify(APP.name, "❌ 签到失败", "Cookie数据解析失败");
+  $.done();
   return;
 }
 
 if (!cookieData.authorization) {
   console.log("缺少authorization");
-  $notification.post(APP.name, "❌ 签到失败", "缺少授权信息\n请重新获取Cookie");
-  $done();
+  $.notify(APP.name, "❌ 签到失败", "缺少授权信息\n请重新获取Cookie");
+  $.done();
   return;
 }
 
@@ -177,19 +187,19 @@ function sign(retryCount = 0) {
     timeout: CONFIG.timeout,
   };
 
-  $httpClient.post(options, (error, response, data) => {
+  $.post(options, (error, response, data) => {
     if (error) {
       console.log(`请求失败(${retryCount + 1}): ${error}`);
       if (retryCount < CONFIG.maxRetries) {
         setTimeout(() => sign(retryCount + 1), CONFIG.retryDelay);
         return;
       }
-      $notification.post(
+      $.notify(
         APP.name,
         "❌ 签到失败",
         `网络请求失败，已重试${CONFIG.maxRetries}次`
       );
-      $done();
+      $.done();
       return;
     }
 
@@ -201,12 +211,12 @@ function sign(retryCount = 0) {
         setTimeout(() => sign(retryCount + 1), CONFIG.retryDelay);
         return;
       }
-      $notification.post(
+      $.notify(
         APP.name,
         "❌ 签到失败",
         `服务器错误: HTTP ${response.status}`
       );
-      $done();
+      $.done();
       return;
     }
 
@@ -222,8 +232,8 @@ function sign(retryCount = 0) {
           const signDays = statusData?.consecutiveDays || 0;
           const info = [`♻️ 连续签到: ${signDays}天`];
           const body = addExtraInfo([...info], statusData);
-          $notification.post(APP.name, "🎉 签到成功", body);
-          $done();
+          $.notify(APP.name, "🎉 签到成功", body);
+          $.done();
         });
       } else if (result.code === 10014 || result.code === 540004) {
         // 已签到,查询状态获取天数
@@ -231,16 +241,16 @@ function sign(retryCount = 0) {
           const days = statusData?.consecutiveDays || 0;
           const info = [`♻️ 连续签到: ${days}天`];
           const body = addExtraInfo([...info], statusData);
-          $notification.post(APP.name, "📅 已签到", body);
-          $done();
+          $.notify(APP.name, "📅 已签到", body);
+          $.done();
         });
       } else if (result.code === 401 || result.code === 403) {
-        $notification.post(
+        $.notify(
           APP.name,
           "❌ 授权失败",
           `Cookie已失效\n错误码: ${result.code}`
         );
-        $done();
+        $.done();
       } else {
         const errorMsg = result.msg || "未知错误";
         if (
@@ -250,13 +260,13 @@ function sign(retryCount = 0) {
           setTimeout(() => sign(retryCount + 1), CONFIG.retryDelay);
           return;
         }
-        $notification.post(APP.name, "❌ 签到失败", errorMsg);
-        $done();
+        $.notify(APP.name, "❌ 签到失败", errorMsg);
+        $.done();
       }
     } catch (e) {
       console.log("数据解析错误: " + e);
-      $notification.post(APP.name, "❌ 签到失败", "数据解析错误");
-      $done();
+      $.notify(APP.name, "❌ 签到失败", "数据解析错误");
+      $.done();
     }
   });
 }

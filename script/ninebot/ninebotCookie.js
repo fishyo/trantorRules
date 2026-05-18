@@ -29,16 +29,24 @@ mitm:
 打开九号出行APP，进入签到页面即可自动捕获
 */
 
-// Quantumult X Compatibility Shim
-if (typeof $task !== 'undefined') {
-  var $persistentStore = {
-    read: key => $prefs.valueForKey(key),
-    write: (val, key) => $prefs.setValueForKey(val, key)
-  };
-  var $notification = {
-    post: (title, sub, body) => $notify(title, sub, body)
-  };
-}
+const $ = {
+  read: (key) => {
+    if (typeof $persistentStore !== "undefined") return $persistentStore.read(key);
+    if (typeof $prefs !== "undefined") return $prefs.valueForKey(key);
+  },
+  write: (val, key) => {
+    if (typeof $persistentStore !== "undefined") return $persistentStore.write(val, key);
+    if (typeof $prefs !== "undefined") return $prefs.setValueForKey(val, key);
+  },
+  notify: (title, sub, msg) => {
+    if (typeof $notification !== "undefined") $notification.post(title, sub, msg);
+    else if (typeof $notify !== "undefined") $notify(title, sub, msg);
+    else console.log(`${title}\n${sub}\n${msg}`);
+  },
+  done: (obj) => {
+    if (typeof $done !== "undefined") $done(obj);
+  }
+};
 
 const cookieKey = "ninebot_cookie_data";
 
@@ -65,11 +73,11 @@ if ($request.url.indexOf("user-sign") > -1 && $request.url.indexOf("sign") > -1)
             url: $request.url
         });
 
-        const oldData = $persistentStore.read(cookieKey);
+        const oldData = $.read(cookieKey);
 
         if (oldData !== cookieData) {
-            if ($persistentStore.write(cookieData, cookieKey)) {
-                $notification.post("九号出行", "🎉 Cookie 获取成功", "授权信息已更新，可以关闭该脚本");
+            if ($.write(cookieData, cookieKey)) {
+                $.notify("九号出行", "🎉 Cookie 获取成功", "授权信息已更新，可以关闭该脚本");
                 console.log("九号出行 Cookie 已更新并保存");
             }
         } else {
@@ -78,4 +86,4 @@ if ($request.url.indexOf("user-sign") > -1 && $request.url.indexOf("sign") > -1)
     }
 }
 
-$done({});
+$.done({});

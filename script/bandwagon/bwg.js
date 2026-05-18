@@ -112,12 +112,12 @@ function getServiceInfo() {
   // 验证配置
   if (!config.apiKey || !config.veid) {
     console.log("❌ Configuration missing");
-    $notification.post(
+    $.notify(
       "⚠️ 配置缺失",
       "",
       "请在 BoxJS 中配置 API Key 和 VEID"
     );
-    $done();
+    $.done();
     return;
   }
 
@@ -128,11 +128,11 @@ function getServiceInfo() {
   const maskedUrl = apiUrl.replace(/veid=([^&]+)/, "veid=****").replace(/api_key=([^&]+)/, "api_key=****");
   console.log(`Request API: ${maskedUrl}`);
 
-  $httpClient.get(request, function (error, response, data) {
+  $.get(request, function (error, response, data) {
     if (error) {
       console.error("❌ Request Error:", error);
-      $notification.post("❌ 查询失败", "", error.message);
-      $done();
+      $.notify("❌ 查询失败", "", error.message);
+      $.done();
       return;
     }
 
@@ -145,8 +145,8 @@ function getServiceInfo() {
 
       if (jsonData.error) {
         console.warn("⚠️ API Returned Error:", jsonData.error);
-        $notification.post("❌ API Error", "", jsonData.error);
-        $done();
+        $.notify("❌ API Error", "", jsonData.error);
+        $.done();
         return;
       }
 
@@ -176,12 +176,12 @@ function getServiceInfo() {
       msg += `带宽倍数: ${monthlyDataMultiplier}x\n`;
 
       console.log("🔔 Sending Notification...");
-      $notification.post("🖲️ Bandwagon Status", "", msg);
-      $done();
+      $.notify("🖲️ Bandwagon Status", "", msg);
+      $.done();
     } catch (e) {
       console.error("❌ Parse Error:", e);
-      $notification.post("❌ 解析错误", "", e.message);
-      $done();
+      $.notify("❌ 解析错误", "", e.message);
+      $.done();
     }
   });
 }
@@ -189,7 +189,7 @@ function getServiceInfo() {
 function main() {
   if (typeof $environment !== "undefined" && $environment.platform === "boxjs") {
     const config = getConfig();
-    $done({
+    $.done({
         title: boxjsConfig.title,
         icon: boxjsConfig.icon,
         items: boxjsConfig.settings.map((item) => ({
