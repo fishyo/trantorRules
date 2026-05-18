@@ -1,6 +1,5 @@
 /*
 九号出行 - 签到脚本 (Cross-Platform Version)
-
 [Loon / Egern 配置]
 scriptings:
   - schedule:

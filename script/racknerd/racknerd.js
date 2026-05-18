@@ -84,13 +84,8 @@ function getConfig() {
   }
 
   if (!apiKey || !apiHash) {
-    if (typeof $persistentStore !== "undefined") {
-      apiKey = apiKey || $persistentStore.read("racknerd.apiKey") || "";
-      apiHash = apiHash || $persistentStore.read("racknerd.apiHash") || "";
-    } else if (typeof $prefs !== "undefined") {
-      apiKey = apiKey || $prefs.valueForKey("racknerd.apiKey") || "";
-      apiHash = apiHash || $prefs.valueForKey("racknerd.apiHash") || "";
-    }
+    apiKey = apiKey || $.read("racknerd.apiKey") || "";
+    apiHash = apiHash || $.read("racknerd.apiHash") || "";
   }
 
   console.log(`Config Read - Key Len: ${apiKey.length}, Hash Len: ${apiHash.length}`);
@@ -99,13 +94,8 @@ function getConfig() {
 
 // 保存配置
 function saveConfig(apiKey, apiHash) {
-  if (typeof $persistentStore !== "undefined") {
-    $persistentStore.write(apiKey, "racknerd.apiKey");
-    $persistentStore.write(apiHash, "racknerd.apiHash");
-  } else if (typeof $prefs !== "undefined") {
-    $prefs.setValueForKey(apiKey, "racknerd.apiKey");
-    $prefs.setValueForKey(apiHash, "racknerd.apiHash");
-  }
+  $.write(apiKey, "racknerd.apiKey");
+  $.write(apiHash, "racknerd.apiHash");
 }
 
 // 解析 XML

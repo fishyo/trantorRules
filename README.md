@@ -33,6 +33,7 @@
 | 名称 | 说明 | 一键导入 | 复制链接 |
 |------|------|---------|---------|
 | adBlock | 广告拦截 | [导入](https://www.nsloon.com/openloon/import?plugin=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/plugin/adBlock.lpx) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/plugin/adBlock.lpx) |
+| Ninebot | 九号出行签到及Cookie获取 | [导入](https://www.nsloon.com/openloon/import?plugin=https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/plugin/ninebot.plugin) | [复制](https://raw.githubusercontent.com/fishyo/trantorRules/main/loon/plugin/ninebot.plugin) |
 
 **规则 (Rule):**
 

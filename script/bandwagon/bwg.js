@@ -81,13 +81,8 @@ function getConfig() {
   }
 
   if (!apiKey || !veid) {
-    if (typeof $persistentStore !== "undefined") {
-      apiKey = apiKey || $persistentStore.read("bandwagon.apiKey") || "";
-      veid = veid || $persistentStore.read("bandwagon.veid") || "";
-    } else if (typeof $prefs !== "undefined") {
-      apiKey = apiKey || $prefs.valueForKey("bandwagon.apiKey") || "";
-      veid = veid || $prefs.valueForKey("bandwagon.veid") || "";
-    }
+    apiKey = apiKey || $.read("bandwagon.apiKey") || "";
+    veid = veid || $.read("bandwagon.veid") || "";
   }
   const maskedVeid = veid ? veid.replace(/^(.{2})(.*)(.{1})$/, "$1****$3") : "N/A";
   console.log(`Config Read - Key Len: ${apiKey.length}, VEID: ${maskedVeid}`);
@@ -96,13 +91,8 @@ function getConfig() {
 
 // 保存配置
 function saveConfig(apiKey, veid) {
-  if (typeof $persistentStore !== "undefined") {
-    $persistentStore.write(apiKey, "bandwagon.apiKey");
-    $persistentStore.write(veid, "bandwagon.veid");
-  } else if (typeof $prefs !== "undefined") {
-    $prefs.setValueForKey(apiKey, "bandwagon.apiKey");
-    $prefs.setValueForKey(veid, "bandwagon.veid");
-  }
+  $.write(apiKey, "bandwagon.apiKey");
+  $.write(veid, "bandwagon.veid");
 }
 
 function getServiceInfo() {
