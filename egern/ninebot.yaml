@@ -1,0 +1,22 @@
+---
+name: "九号出行"
+description: "九号出行自动签到与 Cookie 获取"
+author: "fishyo"
+homepage: "https://github.com/fishyo/trantorRules"
+icon: "sf-symbol:checkmark.circle.fill"
+
+mitm:
+  hostnames:
+    - "cn-cbu-gateway.ninebot.com"
+
+scriptings:
+  - http_request:
+      name: "九号出行获取Cookie"
+      match: "^https:\\/\\/cn-cbu-gateway\\.ninebot\\.com\\/portal\\/api\\/user-sign\\/v(1|2)\\/sign"
+      script_url: "https://raw.githubusercontent.com/fishyo/trantorRules/main/script/ninebot/ninebotCookie.js"
+      body_required: true
+
+  - schedule:
+      name: "九号出行签到"
+      cron: "0 8 * * *"
+      script_url: "https://raw.githubusercontent.com/fishyo/trantorRules/main/script/ninebot/ninebotSign.js"
